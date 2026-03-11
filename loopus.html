@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Bouncing Box" content="width=device-width, initial-scale=1.0" />
+    <title>Bouncing Box</title>
+  </head>
+  <body>
+    <img hidden
+      id="box"
+      src="https://i.ytimg.com/vi/YCWMhTd0c6w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCMzoiUA5hVoa6QILgthK17WhcDsA"
+    />
+    <canvas id="canvas" width="1500" height="1000"></canvas>
+  </body>
+</html>
+<script>
+    let canvas = document.getElementById("canvas")
+    let squirrlWife = document.getElementById("box")
+    let ctx = canvas.getContext("2d")
+  setInterval(boxMove, 16);
+  let x = 0;
+  let y = 0;
+  ctx.drawImage(squirrlWife, x, y, 100,100)
+  let xspeed = 3;
+  let yspeed = 2;
+  function boxMove() {
+    ctx.clearRect(x-xspeed, y-yspeed, 100, 100);
+     
+  }
+// want canvas/box to bounce off canvas walls and make sure it check constantly
+for (var i = 0;i <10; i=i+1){
+     ctx.drawImage(squirrlWife, x, y, 100,100)
+}
+</script>

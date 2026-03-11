@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Money Clicker</title>
+  
+  <style>
+
+
+img {
+    position: absolute;
+    top: 40%;
+    left: 42%;
+}
+h1 {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 0%;
+    width: 100%;
+    word-wrap: break-word;
+}
+</style>
+</head>
+<body>
+    <h1 id="score">Score=0</h1>
+    <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzEX7wta_0q_L8gX9uKsH2AhJKdBUHhKZwmg&s">
+<button type="button">upgrade</button>
+</body>
+</html>
+<script>
+    //click the <img> tag, score=score+1
+    let score=0
+    document.getElementById("image").addEventListener("click",scoreGoUp)
+    //display score on screen
+    function scoreGoUp(){
+        score=score+1
+        //when click, score go up, and you see it
+    document.getElementById("score").innerText=score
+    }
+    //make it so the amount of points you get per click is increased by 1 as the cost of the upgrade doubles everytime
+
+
+if("button"=== "click"){
+let scoreGoUp=scoreGoUp+1
+}
+</script>

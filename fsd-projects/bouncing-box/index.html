@@ -80,10 +80,16 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
+          moveBoxTo(450);
+         var positionX = 5;
+         positionX += 10;
+         positionX = positionX + 10;
+         var speed = 10
+         if (positionX > boardWidth) {
+          speed = speed * -1;
+          speed *= -1;
 
-        
-
-          
+         }
         }
 
         /**
@@ -94,6 +100,12 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
+          positionX = 0
+          changeBoxText(0)
+          points = points + 1;
+          points++;
+          speed = speed + 3;
+          speed += 3
 
 
 
