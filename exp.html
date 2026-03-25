@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Bouncing Box" content="width=device-width, initial-scale=1.0" />
+    <title>Bouncing Box</title>
+    <style>
+body {
+  background-image: url('https://www.horrorgeeklife.com/wp-content/uploads/2023/09/Squirrel-Stapler.jpg');
+}
+</style>
+  </head>
+  <body>
+   
+    <img hidden
+      id="box"
+      src="https://i.ytimg.com/vi/YCWMhTd0c6w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCMzoiUA5hVoa6QILgthK17WhcDsA"
+    />
+    <canvas id="canvas" width="2000" height="1800"></canvas>
+  </body>
+</html>
+<script>
+    let canvas = document.getElementById("canvas")
+    let squirrlWife = document.getElementById("box")
+    let ctx = canvas.getContext("2d")
+  setInterval(boxMove, 16);
+  let x = [0,50,100,150,200,250,300,350,400,450];
+  let y = [0,50,100,150,200,250,300,350,400,450];
+  ctx.drawImage(squirrlWife, x, y, 100,100)
+  let xspeed = 3;
+  let yspeed = 2;
+  function boxMove() {
+    x += xspeed;
+    y += yspeed;
+    ctx.clearRect(0,0,2000,5000);
+     ctx.drawImage(squirrlWife, x, y, 100,100)
+    if (x===1000) {
+      xspeed*=-1
+    }
+    if (y===900) {
+      yspeed*=-1
+    }
+    if (x===10) {
+      xspeed*=-1
+    }
+    if (y===10) {
+      yspeed*=-1
+    }
+    for(
+        ctx.drawImage(squirrlWife, x, y, 100,100)
+  }
+  }
+// want canvas/box to bounce off canvas walls and make sure it check constantly
+  
+</script>

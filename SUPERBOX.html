@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Bouncing Boxes</title>
+    <style>
+      body {
+        background-image: url("https://www.horrorgeeklife.com/wp-content/uploads/2023/09/Squirrel-Stapler.jpg");
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      hidden
+      id="box"
+      src="https://i.ytimg.com/vi/YCWMhTd0c6w/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCMzoiUA5hVoa6QILgthK17WhcDsA"
+    />
+    <canvas id="canvas" width="2000" height="1800"></canvas>
+
+    <script>
+      let canvas = document.getElementById("canvas");
+      let img = document.getElementById("box");
+      let ctx = canvas.getContext("2d");
+      let boxes = [];
+
+      // make the boxes
+      for (let i = 0; i < 100; i = i + 1) {
+        boxes.push({
+          x: Math.random() * 2000,
+          y: Math.random() * 1800,
+          speedx: Math.random() * 30 - 15,
+          speedy: Math.random() * 30 - 15,
+        });
+      }
+
+      // make them move
+      let timer = setInterval(function () {
+        ctx.clearRect(0, 0, 2000, 1800);
+
+        for (let i = 0; i < boxes.length; i = i + 1) {
+          let box = boxes[i];
+          box.x = box.x + box.speedx;
+          box.y = box.y + box.speedy;
+
+          // bounce off walls
+          if (box.x < 0 || box.x > 2000) {
+            box.speedx = box.speedx * -1;
+          }
+          if (box.y < 0 || box.y > 1800) {
+            box.speedy = box.speedy * -1;
+          }
+
+          ctx.drawImage(img, box.x, box.y, 100, 100);
+        }
+      }, 16);
+    </script>
+  </body>
+</html>
